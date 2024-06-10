@@ -1,3 +1,17 @@
+import '@/app/global.css';
+import { inter } from '@/app/lib/fonts';
+
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Maxi Dashboard',
+    default: 'Maxi Dashboard',
+  },
+  description: 'The official Next.js Learn Dashboard built with App Router.',
+  // metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -5,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
 }
